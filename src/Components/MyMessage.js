@@ -1,0 +1,28 @@
+import React from "react";
+
+export default function MyMessage(props) {
+	const { message } = props;
+
+	if (message?.attachments?.length > 0) {
+		return (
+			<img
+				src={message.attachments[0].file}
+				alt="message-attachment"
+				className="message-image"
+				style={{ float: "right" }}
+			/>
+		);
+	}
+	return (
+		<div
+			className="message"
+			style={{
+				float: "right",
+				marginRight: "18px",
+				color: "white",
+				backgroundColor: "#0078FF",
+			}}>
+			{message.text}
+		</div>
+	);
+}
