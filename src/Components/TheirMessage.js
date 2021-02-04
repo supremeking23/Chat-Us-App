@@ -28,8 +28,8 @@ export default function TheirMessage(props) {
 						style={{
 							float: "left",
 							marginRight: "18px",
-
-							backgroundColor: "#CBBCDC",
+							color: "#FFFFFF",
+							backgroundColor: "#00C6FF",
 							marginLeft: isFirstMessageByUser ? `4px` : `48px`,
 						}}>
 						{message.text}

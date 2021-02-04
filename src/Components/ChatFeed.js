@@ -90,7 +90,15 @@ export default function ChatFeed(props) {
 							`${person.person.username}`;
 						})} */}
 
-						{chat.people.map((person) => `${person.person.username} `)}
+						{chat.people.map((person, index) => {
+							return (
+								<>
+									{person.person.username}
+									{/* get last one */}
+									{chat.people.length === index + 1 ? "" : ","}
+								</>
+							);
+						})}
 					</div>
 
 					{renderMessages()}
