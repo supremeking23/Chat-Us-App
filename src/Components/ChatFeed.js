@@ -26,6 +26,12 @@ export default function ChatFeed(props) {
 	// 	);
 	// };
 
+	const logoutFunction = () => {
+		window.location.reload();
+		localStorage.removeItem("username");
+		localStorage.removeItem("password");
+	};
+
 	const renderReadReceipts = (message, isMyMessage) =>
 		chat.people.map(
 			(person, index) =>
@@ -99,6 +105,11 @@ export default function ChatFeed(props) {
 								</>
 							);
 						})}
+						<div className="logout-div">
+							<button type="button" className="logout" onClick={logoutFunction}>
+								Logout
+							</button>
+						</div>
 					</div>
 
 					{renderMessages()}
